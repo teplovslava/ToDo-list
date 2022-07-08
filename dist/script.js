@@ -11,6 +11,7 @@ btn.addEventListener('click',function(){
     arr.push(new ToDo(inp.value))
     toHtml()
     updateStorage()
+    inp.value=''
 })
 
 
