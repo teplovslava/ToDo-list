@@ -19,7 +19,11 @@ function toHtml(){
     if(arr.length>0){ 
     result.innerHTML=""
     arr.forEach((element,index) => {result.innerHTML+=createElem(element,index)});}
-}
+    else{
+        if(arr.length==0){ 
+            result.innerHTML=""
+    }
+}}
 
 
 
@@ -30,8 +34,8 @@ function ToDo(name){
 
 function createElem(element,index){
     return `<div class="toDo-elem ${element.complite?'complite':''}">
+    <input id="label${index}" onclick=toCheck(${index}) class="check" type="checkbox" ${element.complite?"checked":""}><label for='label${index}' class='label'></label>
     <p class="item-descr">${element.name}</p>
-    <input onclick=toCheck(${index}) class="check " type="checkbox" ${element.complite?"checked":""}>
     <button onclick=deleteItem(${index}) class="deleteItem">Delete</button>
     </div>`
 }
@@ -51,4 +55,5 @@ function updateStorage(){
 function toCheck(index){
     arr[index].complite=!arr[index].complite
     updateStorage()
+    toHtml()
 }
