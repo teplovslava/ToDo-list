@@ -37,6 +37,7 @@ body{
     padding: 5px 10px;
     background-color: rgb(190, 86, 0);
    color:rgb(255, 136, 38) ;
+   font-size: 16px;
 }
 
 .search-blok input:focus{
